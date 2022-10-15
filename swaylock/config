@@ -1,0 +1,10 @@
+font="Iosevka Medium Extended"
+ignore-empty-password
+daemonize
+line-uses-ring
+indicator-radius=100
+indicator-thickness=15
+color=1e2127
+inside-color=15171b33
+screenshots
+effect-blur=5x3

@@ -1,0 +1,47 @@
+#window, #outer-box, #input, #inner-box, #entry {
+    color: #abb2bf;
+}
+
+#window {
+    background-color: #282c34;
+    border: 2px solid #5c6370;
+    border-radius: 8px;
+}
+
+#outer-box {
+    padding: 10px;
+}
+
+#input {
+    margin-bottom: 10px;
+    background-color: #282c34;
+    border-radius: 8px;
+    outline:none;
+}
+
+#input:focused {
+   border: 1px solid #5c6370;
+   border-radius: 8px;
+}
+
+#scroll {
+    margin: 0px;
+}
+
+#text {
+    margin: 5px;
+}
+
+#entry {
+    padding: 5px;
+    border: none;
+    border-radius: 4px;
+}
+
+#entry:selected {
+    font-weight: bold;
+    color: #abb2bf;
+    background-color: #282c34;
+    border: 1px solid #5c6370;
+    border-radius: 8px;
+}

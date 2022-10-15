@@ -1,0 +1,36 @@
+#window, #outer-box, #input, #inner-box, #entry {
+    color: white;
+}
+
+#window {
+    background-color: #1e2127;
+    border: 5px solid #15171b;
+}
+
+#outer-box {
+    padding: 20px;
+}
+
+#input {
+    margin-bottom: 10px;
+    background-color: #1e2127;
+    border-radius: 0; 
+}
+
+#scroll {
+    margin: 0px;
+}
+
+#text {
+    margin: 5px;
+}
+
+#entry {
+    padding: 5px;
+}
+
+#entry:selected {
+    font-weight: bold;
+    color: white;
+    background-color: #15171b;
+}
