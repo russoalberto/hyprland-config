@@ -8,7 +8,7 @@ case $selected in
   logout)
     swaymsg exit;;
   suspend)
-    exec systemctl suspend;;
+    exec $(~/.config/scripts/lock.sh && sleep 2 && systemctl suspend);;
   reboot)
     exec systemctl reboot;;
   shutdown)
