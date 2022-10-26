@@ -6,10 +6,12 @@ line-uses-inside
 indicator-radius=100
 indicator-thickness=5
 
-text-color=282c34
-text-clear-color=282c34
-text-ver-color=282c34
-text-wrong-color=282c34
+color=282c34
+
+text-color=282c3400
+text-clear-color=282c3400
+text-ver-color=282c3400
+text-wrong-color=282c3400
 
 inside-color=282c3400
 inside-clear-color=282c3400
