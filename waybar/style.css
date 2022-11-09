@@ -25,6 +25,19 @@
     min-height: 0;
 }
 
+button {
+    border: none;
+}
+
+label:disabled,
+button:disabled {
+    color: inherit;
+}
+
+button:hover {
+    background: inherit;
+}
+
 /* icons start at U+E900 in Jetbrains mono in gucharmap */
 
 window#waybar {
@@ -201,8 +214,7 @@ label:focus {
 }
 
 #temperature {
-    color: @magenta;
-    /* background-color: #f0932b; */
+    color: @blue;
 }
 
 #temperature.critical {
