@@ -9,7 +9,7 @@
 # swaylock
 # grimshot
 
-IMAGE=/tmp/swaylock.png
+IMAGE=/tmp/lock.jpg
 SCREENSHOT="grim $IMAGE"
 
 # Alternate screenshot method with imagemagick. NOTE: it is much slower

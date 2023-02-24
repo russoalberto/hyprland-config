@@ -1,12 +1,12 @@
 #!/bin/bash
 
-entries="🌙 Suspend\n↺ Reboot\n⏻ Shutdown"
+entries="Suspend\nReboot\nShutdown"
 
-selected=$(echo -e $entries|wofi --width 250 --height 170 --dmenu --cache-file /dev/null | awk '{print tolower($2)}')
+selected=$(echo -e $entries|wofi --width 250 --height 170 --dmenu --cache-file /dev/null | awk '{print tolower($1)}')
 
 case $selected in
   logout)
-    swaymsg exit;;
+    exec archlinux-logout;;
   suspend)
     exec $(~/.config/scripts/lock.sh && sleep 2 && systemctl suspend);;
   reboot)

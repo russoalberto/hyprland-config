@@ -10,16 +10,17 @@
 @define-color magenta #c678dd;
 @define-color cyan #56b6c2;
 @define-color gray #5c6370;
+@define-color border #33363b;
 
 @define-color critical @redDark; /* critical color */
 @define-color warning @yellowLight;  /* warning color */
 @define-color alert   @yellowDark;
 
 * {
-    border: none;
+    border: 0;
     border-radius: 6px;
     /* `otf-font-awesome` is required to be installed for icons */
-    font-family: "Iosevka Medium Extended", Helvetica, Arial, sans-serif;
+    font-family: "Fira Code", "Font Awesome 6 Free", Helvetica, Arial, sans-serif;
     /* Recommended font sizes: 720p: ~14px, 1080p: ~18px */
     font-size: 12px;
     min-height: 0;
@@ -37,17 +38,17 @@ button:disabled {
 button:hover {
     background: inherit;
 }
-
 /* icons start at U+E900 in Jetbrains mono in gucharmap */
 
 window#waybar {
-    background-color: rgba(50, 50, 50, 0.9);
     background-color: @bgcolor;
     /* border-bottom: 0px solid rgba(100, 114, 125, 0.5); */
     color: #ffffff;
     transition-property: background-color;
     transition-duration: .5s;
     border-radius: 0;
+    border-bottom: 1px solid rgba(29, 30, 33, 0.5);
+    border-top: 1px solid @bgcolor
 }
 
 window#waybar.hidden {
@@ -74,7 +75,7 @@ window#waybar.chromium {
 
 #workspaces button {
     padding: 0 0 0 0;
-    margin: 3px 0 3px 5px;
+    margin: 3px 4px;
     background-color: transparent;
     color: @fgcolor;
     min-width: 24px;
@@ -85,7 +86,7 @@ window#waybar.chromium {
 
 #workspaces button.active {
     padding: 0 0 0 0;
-    margin: 3px 0 3px 5px;
+    margin: 3px 4px;
     background-color: @fgcolor;
     color: @bgcolor;
     min-width: 24px;
@@ -96,21 +97,16 @@ window#waybar.chromium {
 
 /* https://github.com/Alexays/Waybar/wiki/FAQ#the-workspace-buttons-have-a-strange-hover-effect */
 #workspaces button:hover {
-    background: rgba(0, 0, 0, 0.2);
+    background: @gray;
     /* box-shadow: inset 0 -3px #ffffff; */
 }
 
 #workspaces button.focused {
-    background: rgba(0, 0, 0, 0.7);
+    background: @gray;
 }
 
 #workspaces button.urgent {
-    background-color: #eb4d4b;
-}
-
-#mode {
-    background-color: #64727D;
-    border-bottom: 3px solid #ffffff;
+    background-color: @alert;
 }
 
 #clock,
@@ -130,7 +126,7 @@ window#waybar.chromium {
 #mpd,
 #language {
     padding: 1px 6px 0px 6px;
-    margin: 4px 3px 5px 3px;
+    margin: 3px 4px;
     color: @fgcolor;
     /* background-color: #bbccdd; */
     background-color:transparent;
@@ -155,7 +151,7 @@ window#waybar.chromium {
 }
 
 #battery {
-    color: @redLight;
+    color: @green;
 }
 
 /* #battery.charging {
@@ -177,7 +173,8 @@ window#waybar.chromium {
     animation-timing-function: linear;
     animation-iteration-count: infinite;
     animation-direction: alternate;
-*/    background-color: @critical;
+*/  
+    background-color: @critical;
     color: @white;
 }
 
@@ -237,5 +234,4 @@ label:focus {
 #custom-separator {
     color: @gray;
     margin: 0 1px;
-    padding-bottom: 5px;
 }

@@ -2,11 +2,12 @@
     "layer": "top", // Waybar at top layer
     "position": "top", // Waybar position (top|bottom|left|right)
     "height": 30, // Waybar height (to be removed for auto height)
+    "icon-size": 24,
     "gtk-layer-shell": false,
     "modules-left": ["wlr/workspaces", "hyprland/mode"],
     "modules-center": [],
     "modules-right": [
-	"cpu", 
+	"cpu",
         "custom/separator",
         "memory",
         "custom/separator",
@@ -50,7 +51,7 @@
     },
     "clock": {
         "format": "{:%a %d/%m/%Y %H:%M}",
-        "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>",
+        "tooltip-format": "{:%Y %B}\n<tt><small>{calendar}</small></tt>",
         //"format-alt": "{:%H:%M:%S}",
         "interval": 1
     },
@@ -82,9 +83,9 @@
             "critical": 15
         },
         // Connected to AC
-        "format": " {icon}  {capacity}%", // Icon: bolt
+        "format": " {icon} {capacity}%", // Icon: bolt
         // Not connected to AC
-        "format-discharging": "{icon}  {capacity}% ({time})",
+        "format-discharging": "{icon} {capacity}% ({time})",
         "format-icons": [
             "", // Icon: battery-full
             "", // Icon: battery-three-quarters
@@ -103,14 +104,14 @@
     },
     "pulseaudio": {
         "format": "{icon} {volume}% {format_source}",
-        "format-bluetooth": "{volume}% {icon} {format_source}",
-        "format-bluetooth-muted": "  {icon} {format_source}",
+        "format-bluetooth": "{icon} {volume}%  {format_source}",
+        "format-bluetooth-muted": "{icon}   {format_source}",
         "format-muted": " 0% {format_source}",
         "format-source-muted": "",
         "format-icons": {
             "headphone": "",
-            "hands-free": "",
-            "headset": "",
+            "hands-free": "",
+            "headset": "",
             "phone": "",
             "portable": "",
             "car": "",
@@ -121,6 +122,6 @@
     "backlight": {
         // "device": "acpi_video1",
         "format": "{icon} {percent}%",
-        "format-icons": ["☼"]
+        "format-icons": [""]
     }
 }
