@@ -20,7 +20,7 @@
     border: 0;
     border-radius: 6px;
     /* `otf-font-awesome` is required to be installed for icons */
-    font-family: "Fira Code", "Font Awesome 6 Free", Helvetica, Arial, sans-serif;
+    font-family: "JetBrains Mono", "Font Awesome 6 Free", Helvetica, Arial, sans-serif;
     /* Recommended font sizes: 720p: ~14px, 1080p: ~18px */
     font-size: 12px;
     min-height: 0;
