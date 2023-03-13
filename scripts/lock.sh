@@ -10,7 +10,7 @@
 # grimshot
 
 IMAGE=/tmp/lock.jpg
-SCREENSHOT="grim $IMAGE"
+SCREENSHOT="grim -o eDP-1 $IMAGE"
 
 # Alternate screenshot method with imagemagick. NOTE: it is much slower
 # SCREENSHOT="import -window root $IMAGE" # 1.35s

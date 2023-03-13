@@ -27,7 +27,7 @@
 	"custom/separator",
         "tray"],
     "wlr/workspaces": {
-        "sort-by-name": true,
+        "sort-by-number": true,
         "on-click": "activate"
      },
     "custom/separator": {
