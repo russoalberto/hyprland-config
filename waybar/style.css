@@ -18,7 +18,7 @@
 
 * {
     border: 0;
-    border-radius: 6px;
+    border-radius: 0px;
     /* `otf-font-awesome` is required to be installed for icons */
     font-family: "JetBrains Mono", "Font Awesome 6 Free", Helvetica, Arial, sans-serif;
     /* Recommended font sizes: 720p: ~14px, 1080p: ~18px */
