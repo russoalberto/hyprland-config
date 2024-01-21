@@ -1,6 +1,8 @@
 /* ONE DARK PALETTE */
-@define-color fgcolor #abb2bf;  /* foreground color */
-@define-color bgcolor #282c34;  /* background color */
+@define-color fgcolor #abb2bf;
+/* foreground color */
+@define-color bgcolor #282c34;
+/* background color */
 @define-color redLight #e06c75;
 @define-color redDark #be5046;
 @define-color green #98c379;
@@ -12,47 +14,50 @@
 @define-color gray #5c6370;
 @define-color border #33363b;
 
-@define-color critical @redDark; /* critical color */
-@define-color warning @yellowLight;  /* warning color */
-@define-color alert   @yellowDark;
+@define-color critical @redDark;
+/* critical color */
+@define-color warning @yellowLight;
+/* warning color */
+@define-color alert @yellowDark;
 
 * {
-    border: 0;
-    border-radius: 0px;
-    /* `otf-font-awesome` is required to be installed for icons */
-    font-family: "JetBrains Mono", "Font Awesome 6 Free", Helvetica, Arial, sans-serif;
-    /* Recommended font sizes: 720p: ~14px, 1080p: ~18px */
-    font-size: 12px;
-    min-height: 0;
+  border: 0;
+  border-radius: 0px;
+  /* `otf-font-awesome` is required to be installed for icons */
+  font-family: "0xProto", "Font Awesome 6 Free", Helvetica, Arial, sans-serif;
+  /* Recommended font sizes: 720p: ~14px, 1080p: ~18px */
+  font-size: 12px;
+  min-height: 0;
 }
 
 button {
-    border: none;
+  border: none;
 }
 
 label:disabled,
 button:disabled {
-    color: inherit;
+  color: inherit;
 }
 
 button:hover {
-    background: inherit;
+  background: inherit;
 }
+
 /* icons start at U+E900 in Jetbrains mono in gucharmap */
 
 window#waybar {
-    background-color: @bgcolor;
-    /* border-bottom: 0px solid rgba(100, 114, 125, 0.5); */
-    color: #ffffff;
-    transition-property: background-color;
-    transition-duration: .5s;
-    border-radius: 0;
-    border-bottom: 1px solid rgba(29, 30, 33, 0.5);
-    border-top: 1px solid @bgcolor
+  background-color: @bgcolor;
+  /* border-bottom: 0px solid rgba(100, 114, 125, 0.5); */
+  color: #ffffff;
+  transition-property: background-color;
+  transition-duration: .5s;
+  border-radius: 0;
+  border-bottom: 1px solid rgba(29, 30, 33, 0.5);
+  border-top: 1px solid @bgcolor
 }
 
 window#waybar.hidden {
-    opacity: 0.2;
+  opacity: 0.2;
 }
 
 /*
@@ -65,48 +70,48 @@ window#waybar.solo {
 */
 
 window#waybar.termite {
-    background-color: #3F3F3F;
+  background-color: #3F3F3F;
 }
 
 window#waybar.chromium {
-    background-color: #000000;
-    border: none;
+  background-color: #000000;
+  border: none;
 }
 
 #workspaces button {
-    padding: 0 0 0 0;
-    margin: 3px 4px;
-    background-color: transparent;
-    color: @fgcolor;
-    min-width: 24px;
-    /* Use box-shadow instead of border so the text isn't offset */
-/*    box-shadow: inset 0 -3px transparent;*/
-    /* border-radius: 0px; */
+  padding: 0 0 0 0;
+  margin: 3px 4px;
+  background-color: transparent;
+  color: @fgcolor;
+  min-width: 24px;
+  /* Use box-shadow instead of border so the text isn't offset */
+  /*    box-shadow: inset 0 -3px transparent;*/
+  /* border-radius: 0px; */
 }
 
 #workspaces button.active {
-    padding: 0 0 0 0;
-    margin: 3px 4px;
-    background-color: @fgcolor;
-    color: @bgcolor;
-    min-width: 24px;
-    /* Use box-shadow instead of border so the text isn't offset */
-/*    box-shadow: inset 0 -3px transparent;*/
-    /* border-radius: 0px; */
+  padding: 0 0 0 0;
+  margin: 3px 4px;
+  background-color: @fgcolor;
+  color: @bgcolor;
+  min-width: 24px;
+  /* Use box-shadow instead of border so the text isn't offset */
+  /*    box-shadow: inset 0 -3px transparent;*/
+  /* border-radius: 0px; */
 }
 
 /* https://github.com/Alexays/Waybar/wiki/FAQ#the-workspace-buttons-have-a-strange-hover-effect */
 #workspaces button:hover {
-    background: @gray;
-    /* box-shadow: inset 0 -3px #ffffff; */
+  background: @gray;
+  /* box-shadow: inset 0 -3px #ffffff; */
 }
 
 #workspaces button.focused {
-    background: @gray;
+  background: @gray;
 }
 
 #workspaces button.urgent {
-    background-color: @alert;
+  background-color: @alert;
 }
 
 #clock,
@@ -125,33 +130,32 @@ window#waybar.chromium {
 #custom-pacman,
 #mpd,
 #language {
-    padding: 1px 6px 0px 6px;
-    margin: 3px 4px;
-    color: @fgcolor;
-    /* background-color: #bbccdd; */
-    background-color:transparent;
+  padding: 1px 6px 0px 6px;
+  margin: 3px 4px;
+  color: @fgcolor;
+  /* background-color: #bbccdd; */
+  background-color: transparent;
 }
 
 #window,
 #workspaces {
-    margin: 0 4px;
+  margin: 0 4px;
 }
 
 /* If workspaces is the leftmost module, omit left margin */
-.modules-left > widget:first-child > #workspaces {
-    margin-left: 0;
+.modules-left>widget:first-child>#workspaces {
+  margin-left: 0;
 }
 
 /* If workspaces is the rightmost module, omit right margin */
-.modules-right > widget:last-child > #workspaces {
-    margin-right: 0;
+.modules-right>widget:last-child>#workspaces {
+  margin-right: 0;
 }
 
-#clock {
-}
+#clock {}
 
 #battery {
-    color: @green;
+  color: @green;
 }
 
 /* #battery.charging {
@@ -160,78 +164,78 @@ window#waybar.chromium {
 } */
 
 @keyframes blink {
-    to {
-        background-color: #ffffff;
-        color: #333333;
-    }
+  to {
+    background-color: #ffffff;
+    color: #333333;
+  }
 }
 
 #battery.critical:not(.charging) {
-/*    color: @critical;
+  /*    color: @critical;
     animation-name: blink;
     animation-duration: 0.5s;
     animation-timing-function: linear;
     animation-iteration-count: infinite;
     animation-direction: alternate;
-*/  
-    background-color: @critical;
-    color: @white;
+*/
+  background-color: @critical;
+  color: @white;
 }
 
 label:focus {
-    background-color: #000000;
+  background-color: #000000;
 }
 
 #cpu {
-    color: @redDark;
+  color: @redDark;
 }
 
 #memory {
-    color: @yellowDark;
+  color: @yellowDark;
 }
 
 #network {
-    color: @cyan;
+  color: @cyan;
 }
 
 #network.disconnected {
-    color: @alert;
+  color: @alert;
 }
 
 #pulseaudio {
-    color: @blue;
+  color: @blue;
 }
 
 #pulseaudio.muted {
-    color: #a0a0a0;
+  color: #a0a0a0;
 }
 
 #backlight {
-    color: @yellowLight;
+  color: @yellowLight;
 }
 
 #temperature {
-    color: @blue;
+  color: @blue;
 }
 
 #temperature.critical {
-    background-color: @critical;
+  background-color: @critical;
 }
 
 #tray {
-    /* background-color: #505050; */
+  /* background-color: #505050; */
 }
 
 #idle_inhibitor {
-    /* background-color: #2d3436; */
+  /* background-color: #2d3436; */
 }
 
 #idle_inhibitor.activated {
-    background-color: @fgcolor;
-    color: @bgcolor;
+  background-color: @fgcolor;
+  color: @bgcolor;
 }
 
 #custom-separator {
-    color: @gray;
-    margin: 0 1px;
+  color: @gray;
+  margin: 0 1px;
 }
