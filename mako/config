@@ -5,6 +5,7 @@ padding=10
 margin=10
 border-size=2
 default-timeout=5000
+on-notify=exec mpv ~/Music/notif.mp3
 
 background-color=#282c34
 border-color=#5c6370
