@@ -187,7 +187,7 @@ label:focus {
 }
 
 #cpu {
-  color: @redDark;
+  color: @yellowLight;
 }
 
 #memory {
@@ -203,15 +203,11 @@ label:focus {
 }
 
 #pulseaudio {
-  color: @blue;
-}
-
-#pulseaudio.muted {
-  color: #a0a0a0;
+  color: @redDark;
 }
 
 #backlight {
-  color: @yellowLight;
+  color: @magenta;
 }
 
 #temperature {
