@@ -8,7 +8,7 @@ case $selected in
   logout)
     exec hyprctl dispatch exit;;
   suspend)
-    exec $(hyprlock && sleep 2 && systemctl suspend);;
+    exec systemctl suspend;;
   reboot)
     exec systemctl reboot;;
   shutdown)

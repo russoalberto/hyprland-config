@@ -4,12 +4,12 @@
 #inner-box,
 #entry {
   font-family: "0xProto Nerd Font Mono";
-  color: #abb2bf;
+  color: #ebdbb2;
 }
 
 #window {
-  background-color: #282c34;
-  border: 2px solid #5c6370;
+  background-color: #272727;
+  border: 2px solid #928373;
   border-radius: 8px;
 }
 
@@ -19,13 +19,13 @@
 
 #input {
   margin-bottom: 10px;
-  background-color: #282c34;
+  background-color: #272727;
   border-radius: 8px;
   outline: none;
 }
 
 #input:focused {
-  border: 1px solid #5c6370;
+  border: 1px solid #ebdbb2;
   border-radius: 8px;
 }
 
@@ -45,8 +45,7 @@
 
 #entry:selected {
   font-weight: bold;
-  color: #abb2bf;
-  background-color: #282c34;
-  border: 1px solid #5c6370;
+  background-color: #272727;
+  border: 1px solid #ebdbb2;
   border-radius: 8px;
 }
