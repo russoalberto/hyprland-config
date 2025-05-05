@@ -1,63 +1,25 @@
-/* ONE DARK PALETTE */
-@define-color fgcolor #abb2bf;
-/* foreground color */
-@define-color bgcolor #282c34;
-/* background color */
-@define-color redLight #e06c75;
-@define-color redDark #be5046;
-@define-color green #98c379;
-@define-color yellowLight #e5c07b;
-@define-color yellowDark #d19a66;
-@define-color blue #61afef;
-@define-color magenta #c678dd;
-@define-color cyan #56b6c2;
-@define-color gray #5c6370;
-@define-color border #33363b;
-
-@define-color critical @redDark;
-/* critical color */
-@define-color warning @yellowLight;
-/* warning color */
-@define-color alert @yellowDark;
-
 * {
-  border: 0;
-  border-radius: 0px;
-  /* `otf-font-awesome` is required to be installed for icons */
-  font-family: "0xProto", "Font Awesome 6 Free", Helvetica, Arial, sans-serif;
-  /* Recommended font sizes: 720p: ~14px, 1080p: ~18px */
-  font-size: 12px;
-  min-height: 0;
+    font-size: 13px;
+    border-radius: 2px;
 }
-
-button {
-  border: none;
-}
-
-label:disabled,
-button:disabled {
-  color: inherit;
-}
-
-button:hover {
-  background: inherit;
-}
-
-/* icons start at U+E900 in Jetbrains mono in gucharmap */
 
 window#waybar {
-  background-color: @bgcolor;
-  /* border-bottom: 0px solid rgba(100, 114, 125, 0.5); */
-  color: #ffffff;
-  transition-property: background-color;
-  transition-duration: .5s;
-  border-radius: 0;
-  border-bottom: 1px solid rgba(29, 30, 33, 0.5);
-  border-top: 1px solid @bgcolor
+    /* `otf-font-awesome` is required to be installed for icons */
+  font-family: "0xProto", "Font Awesome 6 Free", Helvetica, Arial, sans-serif;
+    /* font-family: FontAwesome, monospace; */
+    background-color: transparent;
+    border-bottom: 0px;
+    color: #ebdbb2;
+    transition-property: background-color;
+    transition-duration: .5s;
 }
 
 window#waybar.hidden {
-  opacity: 0.2;
+    opacity: 0.2;
+}
+
+window#waybar.empty #window {
+    background-color: transparent;
 }
 
 /*
@@ -69,169 +31,151 @@ window#waybar.solo {
 }
 */
 
-window#waybar.termite {
-  background-color: #3F3F3F;
+.modules-right {
+    margin: 10px 10px 0 0;
+}
+.modules-center {
+    margin: 10px 0 0 0;
+}
+.modules-left {
+    margin: 10px 0 0 10px;
 }
 
-window#waybar.chromium {
-  background-color: #000000;
-  border: none;
-}
-
-#workspaces button {
-  padding: 0 0 0 0;
-  margin: 3px 4px;
-  background-color: transparent;
-  color: @fgcolor;
-  min-width: 24px;
-  /* Use box-shadow instead of border so the text isn't offset */
-  /*    box-shadow: inset 0 -3px transparent;*/
-  /* border-radius: 0px; */
-}
-
-#workspaces button.active {
-  padding: 0 0 0 0;
-  margin: 3px 4px;
-  background-color: @fgcolor;
-  color: @bgcolor;
-  min-width: 24px;
-  /* Use box-shadow instead of border so the text isn't offset */
-  /*    box-shadow: inset 0 -3px transparent;*/
-  /* border-radius: 0px; */
+button {
+    /* Use box-shadow instead of border so the text isn't offset */
+    /* box-shadow: inset 0 -3px transparent; */
+    border: none;
 }
 
 /* https://github.com/Alexays/Waybar/wiki/FAQ#the-workspace-buttons-have-a-strange-hover-effect */
+/*
+button:hover {
+    background: inherit;
+    box-shadow: inset 0 -3px #ebdbb2;
+} */
+
+#workspaces {
+    background-color: #282828;
+}
+
+#workspaces button {
+    padding: 0 5px;
+    background-color: transparent;
+    color: #ebdbb2;
+    border-radius: 0;
+}
+
+#workspaces button:first-child {
+    border-radius: 5px 0 0 5px;
+}
+
+#workspaces button:last-child {
+    border-radius: 0 5px 5px 0;
+}
+
+#workspaces button.active,
 #workspaces button:hover {
-  background: @gray;
-  /* box-shadow: inset 0 -3px #ffffff; */
+    color: #d79921;
 }
 
 #workspaces button.focused {
-  background: @gray;
+    background-color: #665c54;
+    /* box-shadow: inset 0 -3px #ffffff; */
 }
 
 #workspaces button.urgent {
-  background-color: @alert;
+    background-color: #b16286;
 }
 
+#idle_inhibitor,
+#cava,
+#scratchpad,
+#mode,
+#window,
 #clock,
 #battery,
-#cpu,
-#memory,
-#temperature,
 #backlight,
-#network,
-#pulseaudio,
-#custom-media,
+#wireplumber,
 #tray,
-#mode,
-#idle_inhibitor,
-#custom-power,
-#custom-pacman,
-#mpd,
-#language {
-  padding: 1px 6px 0px 6px;
-  margin: 3px 4px;
-  color: @fgcolor;
-  /* background-color: #bbccdd; */
-  background-color: transparent;
+#mpris,
+#memory,
+#network,
+#cpu,
+#load {
+    padding: 0 10px;
+    background-color: #282828;
+    color: #ebdbb2;
 }
 
-#window,
-#workspaces {
-  margin: 0 4px;
+#mode {
+    background-color: #689d6a;
+    color: #282828;
+    /* box-shadow: inset 0 -3px #ffffff; */
 }
 
 /* If workspaces is the leftmost module, omit left margin */
-.modules-left>widget:first-child>#workspaces {
-  margin-left: 0;
+.modules-left > widget:first-child > #workspaces {
+    margin-left: 0;
 }
 
 /* If workspaces is the rightmost module, omit right margin */
-.modules-right>widget:last-child>#workspaces {
-  margin-right: 0;
+.modules-right > widget:last-child > #workspaces {
+    margin-right: 0;
 }
 
-#clock {}
-
-#battery {
-  color: @green;
+#cava {
+    padding: 0 5px;
 }
 
-/* #battery.charging {
-    color: #ffffff;
-    background-color: #26A65B;
-} */
+#battery.charging, #battery.plugged {
+    background-color: #98971a;
+    color: #282828;
+}
 
 @keyframes blink {
-  to {
-    background-color: #ffffff;
-    color: #333333;
-  }
+    to {
+        background-color: #282828;
+        color: #ebdbb2;
+    }
 }
 
+/* Using steps() instead of linear as a timing function to limit cpu usage */
 #battery.critical:not(.charging) {
-  /*    color: @critical;
+    background-color: #cc241d;
+    color: #ebdbb2;
     animation-name: blink;
     animation-duration: 0.5s;
-    animation-timing-function: linear;
+    animation-timing-function: steps(12);
     animation-iteration-count: infinite;
     animation-direction: alternate;
-*/
-  background-color: @critical;
-  color: @white;
 }
 
 label:focus {
-  background-color: #000000;
+    background-color: #000000;
 }
 
-#cpu {
-  color: @yellowLight;
+#wireplumber.muted {
+    background-color: #458588;
 }
 
-#memory {
-  color: @yellowDark;
+#tray > .passive {
+    -gtk-icon-effect: dim;
 }
 
-#network {
-  color: @cyan;
+#tray > .needs-attention {
+    -gtk-icon-effect: highlight;
 }
 
-#network.disconnected {
-  color: @alert;
+#mpris.playing {
+    background-color: #d79921;
+    color: #282828;
 }
 
-#pulseaudio {
-  color: @redDark;
+#tray menu {
+    font-family: sans-serif;
 }
 
-#backlight {
-  color: @magenta;
+#scratchpad.empty {
+    background: transparent;
 }
 
-#temperature {
-  color: @blue;
-}
-
-#temperature.critical {
-  background-color: @critical;
-}
-
-#tray {
-  /* background-color: #505050; */
-}
-
-#idle_inhibitor {
-  /* background-color: #2d3436; */
-}
-
-#idle_inhibitor.activated {
-  background-color: @fgcolor;
-  color: @bgcolor;
-}
-
-#custom-separator {
-  color: @gray;
-  margin: 0 1px;
-}
