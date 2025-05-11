@@ -1,0 +1,11 @@
+#!/bin/bash
+
+while true 
+do
+  notify-send -i ~/.config/scripts/pomodoro.png "'work' session start"
+  termdown 45m && notify-send -i ~/.config/scripts/pomodoro.png "'work' session done"
+  sleep 5
+  notify-send -i ~/.config/scripts/pomodoro.png "'work' session start"
+  termdown 10m && notify-send -i ~/.config/scripts/pomodoro.png "'break' session done"
+  sleep 5
+done
