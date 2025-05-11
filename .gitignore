@@ -1,10 +1,15 @@
 /*
 !alacritty
+!btop
+!dunst
 !kitty
 !hypr
 !mako
+!mpv
+!qutebrowser
 !scripts
-!swaylock
+!spotify-player
+!starship.toml
 !waybar
 !wofi
 !LICENSE
