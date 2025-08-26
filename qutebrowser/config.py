@@ -4,7 +4,7 @@ config.bind('<Alt-Shift-u>', 'spawn --userscript qute-keepassxc --key 3B631D6B36
 config.bind('pw', 'spawn --userscript qute-keepassxc --key 3B631D6B36B3D8BF13A811D6F03FB0645B83A5A3', mode='normal')
 config.bind('eu', 'edit-url', mode='normal')
 
-c.colors.webpage.darkmode.enabled = True
+c.colors.webpage.darkmode.enabled = False
 c.content.blocking.method = 'both'
 c.completion.height = '30%'
 c.completion.scrollbar.width = 2

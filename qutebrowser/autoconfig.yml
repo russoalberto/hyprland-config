@@ -6,6 +6,10 @@
 
 config_version: 2
 settings:
+  colors.webpage.darkmode.enabled:
+    global: false
+  colors.webpage.darkmode.policy.images:
+    global: never
   content.desktop_capture:
     https://meet.google.com: true
   content.media.audio_capture:
@@ -26,3 +30,5 @@ settings:
     - '{file}'
   url.default_page:
     global: https://app.daily.dev/
+  url.start_pages:
+    global: https://lichess.org
