@@ -1,10 +1,10 @@
 {
-  "output": ["DP-1", "eDP-1"],
+  "output": ["DP-1", "DP-3", "eDP-1"],
   // "layer": "top", // Waybar at top layer
   // "position": "bottom", // Waybar position (top|bottom|left|right)
   //"height": 24, // Waybar height (to be removed for auto height)
   // "width": 1280, // Waybar width
-  "spacing": 4, // Gaps between modules (4px)
+  "spacing": 5, // Gaps between modules (4px)
                 // Choose the order of the modules
   "modules-left": [
     "hyprland/workspaces",
@@ -26,12 +26,12 @@
   "tray"
   ],
   "network": {
-    "format-wifi": " {essid} ({signalStrength}%)",
-      "format-ethernet": " {ifname}: {ipaddr}/{cidr}",
-      "format-linked": " {ifname} (No IP)",
+      "format-wifi": " {essid} ({signalStrength}%)",
+      "format-ethernet": "  {ifname}: {ipaddr}/{cidr}",
+      "format-linked": "  {ifname} (No IP)",
       "format-disconnected": "⚠ Disconnected",
       "format-alt": "{ifname}: {ipaddr}/{cidr}",
-      "on-click-right": "kitty -e ~/.config/scripts/network-manager"
+      "on-click-right": "kitty -e impala"
   },
   // Modules configuration
   "hyprland/workspaces": {
@@ -70,7 +70,7 @@
   },
   "clock": {
     // "timezone": "America/New_York",
-    "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>",
+    "tooltip-format": "<tt>{calendar}</tt>",
     "format-alt": "{:%Y-%m-%d}"
   },
   "cpu": {
@@ -123,5 +123,4 @@
       "default": ["", "", ""]
     },
     "on-click": "pavucontrol"
-  }
-}
+  }}

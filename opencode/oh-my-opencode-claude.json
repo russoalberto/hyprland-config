@@ -1,0 +1,66 @@
+{
+  "$schema": "https://raw.githubusercontent.com/code-yeongyu/oh-my-opencode/master/assets/oh-my-opencode.schema.json",
+  "google_auth": false,
+  "agents": {
+    "sisyphus": { 
+      "model": "anthropic/claude-3-5-haiku",
+      "variant": "medium",
+      "system_instruction": "You are a Lean Engineering Orchestrator. Goal: efficient, working code.\n\nPROTOCOL:\n1. **Use Existing Tools**: Do not reinvent the wheel.\n2. **Conciseness**: Keep plans short to save tokens.\n3. **Escalation**: If you fail to solve a bug after 2 tries, STOP and ask the user to consult @Oracle."
+    },
+    "oracle": { 
+      "model": "anthropic/claude-3-5-sonnet",
+      "variant": "high",
+      "system_instruction": "You are the Senior Consultant. You are EXPENSIVE. Provide high-level architectural solutions or debug impossible errors. Be extremely thorough so we only need to ask you once."
+    },
+    "librarian": { 
+      "model": "anthropic/claude-3-5-haiku",
+      "variant": "low",
+      "system_instruction": "Research Assistant. Summarize brevity to save tokens."
+    },
+    "explore": { 
+      "model": "anthropic/claude-3-5-haiku",
+      "variant": "low",
+      "system_instruction": "Code Scout. Locate files quickly."
+    },
+    "frontend-ui-ux-engineer": { 
+      "model": "anthropic/claude-3-5-haiku",
+      "variant": "medium",
+      "system_instruction": "Frontend Engineer. Implement standard UI patterns efficiently. Use standard Tailwind/CSS."
+    },
+    "document-writer": { 
+      "model": "anthropic/claude-3-5-haiku",
+      "variant": "low",
+      "system_instruction": "Technical Writer. Write clear, simple docs."
+    },
+    "multimodal-looker": { 
+      "model": "anthropic/claude-3-5-haiku",
+      "variant": "low"
+    },
+    "prometheus": { 
+      "model": "anthropic/claude-3-5-haiku",
+      "variant": "medium",
+      "system_instruction": "Planner. Gather requirements quickly."
+    },
+    "metis": { 
+      "model": "anthropic/claude-3-5-haiku",
+      "variant": "medium"
+    },
+    "momus": { 
+      "model": "anthropic/claude-3-5-haiku",
+      "variant": "medium"
+    },
+    "atlas": { 
+      "model": "anthropic/claude-3-5-haiku",
+      "variant": "low"
+    }
+  },
+  "categories": {
+    "visual-engineering": { "model": "anthropic/claude-3-5-haiku" },
+    "ultrabrain": { "model": "anthropic/claude-3-7-sonnet" },
+    "artistry": { "model": "anthropic/claude-3-5-haiku" },
+    "quick": { "model": "anthropic/claude-3-5-haiku" },
+    "unspecified-low": { "model": "anthropic/claude-3-5-haiku" },
+    "unspecified-high": { "model": "anthropic/claude-3-5-haiku" },
+    "writing": { "model": "anthropic/claude-3-5-haiku" }
+  }
+}

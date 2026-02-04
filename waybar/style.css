@@ -5,7 +5,7 @@
 
 window#waybar {
     /* `otf-font-awesome` is required to be installed for icons */
-  font-family: "0xProto", "Font Awesome 6 Free", Helvetica, Arial, sans-serif;
+    font-family: "0xProto", "Font Awesome 6 Free", Helvetica, Arial, sans-serif;
     /* font-family: FontAwesome, monospace; */
     background-color: transparent;
     border-bottom: 0px;
@@ -22,15 +22,6 @@ window#waybar.empty #window {
     background-color: transparent;
 }
 
-/*
-window#waybar.empty {
-    background-color: transparent;
-}
-window#waybar.solo {
-    background-color: #FFFFFF;
-}
-*/
-
 .modules-right {
     margin: 10px 10px 0 0;
 }
@@ -42,20 +33,11 @@ window#waybar.solo {
 }
 
 button {
-    /* Use box-shadow instead of border so the text isn't offset */
-    /* box-shadow: inset 0 -3px transparent; */
     border: none;
 }
 
-/* https://github.com/Alexays/Waybar/wiki/FAQ#the-workspace-buttons-have-a-strange-hover-effect */
-/*
-button:hover {
-    background: inherit;
-    box-shadow: inset 0 -3px #ebdbb2;
-} */
-
 #workspaces {
-    background-color: #282828;
+    background-color: rgba(40, 40, 40, 1);
 }
 
 #workspaces button {
@@ -87,6 +69,7 @@ button:hover {
     background-color: #b16286;
 }
 
+#custom-radio,
 #idle_inhibitor,
 #cava,
 #scratchpad,
@@ -103,14 +86,8 @@ button:hover {
 #cpu,
 #load {
     padding: 0 10px;
-    background-color: #282828;
+    background-color: rgba(40, 40, 40, 1);
     color: #ebdbb2;
-}
-
-#mode {
-    background-color: #689d6a;
-    color: #282828;
-    /* box-shadow: inset 0 -3px #ffffff; */
 }
 
 /* If workspaces is the leftmost module, omit left margin */
@@ -128,20 +105,20 @@ button:hover {
 }
 
 #battery.charging {
-    background-color: #98971a;
-    color: #282828;
+    background-color: rgba(152, 151, 26, 1);
+    color: rgba(40, 40, 40, 1);
 }
 
 @keyframes blink {
     to {
-        background-color: #282828;
+        background-color: rgba(40, 40, 40, 1);
         color: #ebdbb2;
     }
 }
 
 /* Using steps() instead of linear as a timing function to limit cpu usage */
 #battery.critical:not(.charging) {
-    background-color: #cc241d;
+    background-color: rgba(204, 36, 29, 1);
     color: #ebdbb2;
     animation-name: blink;
     animation-duration: 0.5s;
@@ -150,32 +127,6 @@ button:hover {
     animation-direction: alternate;
 }
 
-label:focus {
-    background-color: #000000;
-}
-
 #wireplumber.muted {
-    background-color: #458588;
+    background-color: rgba(69, 133, 136, 1);
 }
-
-#tray > .passive {
-    -gtk-icon-effect: dim;
-}
-
-#tray > .needs-attention {
-    -gtk-icon-effect: highlight;
-}
-
-#mpris.playing {
-    background-color: #d79921;
-    color: #282828;
-}
-
-#tray menu {
-    font-family: sans-serif;
-}
-
-#scratchpad.empty {
-    background: transparent;
-}
-
