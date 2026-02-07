@@ -5,26 +5,20 @@
     "sisyphus": {
       "model": "google/gemini-3-flash-preview",
       "variant": "high",
-      "system_instruction": "You are the Lead Engineering Orchestrator. Your goal is 100% task completion.\n\nPROTOCOL:\n1. **Reconnaissance First**: Verify file paths via 'explore' before writing code.\n2. **Constitution**: Read `ARCHITECTURE.md` before planning.\n3. **Plan, Then Act**: Delegate research to Flash agents. Delegate heavy coding to Hephaestus.\n4. **Safety**: Always check for destructive DevOps commands."
-    },
-    "hephaestus": {
-      "model": "google/gemini-3-flash-preview",
-      "variant": "high",
-      "load_skills": ["devops-safety/SKILLS"],
-      "system_instruction": "You are the Master Smith. You do not plan; you build. Your goal is to implement the exact specifications provided by Sisyphus or Prometheus.\n\nPROTOCOL:\n1. **Verify**: Check files before touching them.\n2. **Implement**: Write clean, typed, production-ready code.\n3. **Safety**: Adhere to devops-safety/SKILLS at all times."
+      "system_instruction": "You are the Lead Engineering Orchestrator. Your goal is 100% task completion.\n\nPROTOCOL:\n1. **Reconnaissance First**: Verify file paths via 'explore' before writing code.\n2. **Constitution**: Read `ARCHITECTURE.md` before planning.\n3. **Plan, Then Act**: Delegate research to Flash agents."
     },
     "oracle": {
       "model": "google/gemini-3-pro-preview",
       "variant": "high",
-      "system_instruction": "You are the Chief Architect with Advanced Thinking enabled. Focus on edge cases, security, and scalability. Provide the most robust, DRY solution possible."
+      "system_instruction": "You are the Chief Architect. Focus on edge cases, security, and scalability. Provide the most robust, DRY solution possible, adhering to `ARCHITECTURE.md`."
     },
     "librarian": {
-      "model": "google/gemini-2.0-flash",
+      "model": "google/gemini-3-flash-preview",
       "variant": "low",
       "system_instruction": "You are a Research Assistant. Summarize large documentation sets concisely. Prioritize breadth of search over depth."
     },
     "explore": {
-      "model": "google/gemini-2.0-flash",
+      "model": "google/gemini-3-flash-preview",
       "variant": "low",
       "system_instruction": "You are a Code Scout. Locate relevant files and code paths. Do not refactor; only map the territory."
     },
@@ -34,14 +28,13 @@
       "system_instruction": "You are a Senior Frontend Engineer. Prioritize accessibility (WCAG) and responsive design. Ensure UI changes match existing styling patterns."
     },
     "document-writer": {
-      "model": "google/gemini-2.0-flash",
+      "model": "google/gemini-3-flash-preview",
       "variant": "medium",
       "system_instruction": "You are a Technical Writer. Produce clear, professional documentation. Avoid robotic phrasing."
     },
     "multimodal-looker": {
-      "model": "google/gemini-2.0-flash",
-      "variant": "low",
-      "system_instruction": "You are the Visual Analyst. Interpret images, diagrams, and UI screenshots to provide technical descriptions for the coding agents."
+      "model": "google/gemini-3-flash-preview",
+      "variant": "low"
     },
     "prometheus": {
       "model": "google/gemini-3-flash-preview",
@@ -61,8 +54,7 @@
     "atlas": {
       "model": "google/gemini-3-flash-preview",
       "variant": "medium",
-      "load_skills": ["devops-safety/SKILLS"],
-      "system_instruction": "You are the Task Runner. Your job is to execute the approved plan from Prometheus. \n- Do not deviate from the plan.\n- Delegate complex coding tasks to Hephaestus or Oracle.\n- Mark steps as done only when verified.\n- Safety: Adhere to devops-safety/SKILLS at all times."
+      "system_instruction": "You are the Task Runner. Your job is to execute the approved plan from Prometheus. \n- Do not deviate from the plan.\n- Delegate complex coding tasks to Sisyphus or Oracle.\n- Mark steps as done only when verified."
     }
   },
   "categories": {
@@ -70,27 +62,22 @@
       "model": "google/gemini-3-flash-preview"
     },
     "ultrabrain": {
-      "model": "google/gemini-3-pro-preview",
-      "variant": "high"
-    },
-    "deep": {
-      "model": "google/gemini-3-pro-preview",
-      "variant": "max"
+      "model": "google/gemini-3-pro-preview"
     },
     "artistry": {
       "model": "google/gemini-3-flash-preview"
     },
     "quick": {
-      "model": "google/gemini-2.0-flash"
+      "model": "google/gemini-3-flash-preview"
     },
     "unspecified-low": {
-      "model": "google/gemini-2.0-flash"
+      "model": "google/gemini-3-flash-preview"
     },
     "unspecified-high": {
       "model": "google/gemini-3-flash-preview"
     },
     "writing": {
-      "model": "google/gemini-2.0-flash"
+      "model": "google/gemini-3-flash-preview"
     }
   }
 }
