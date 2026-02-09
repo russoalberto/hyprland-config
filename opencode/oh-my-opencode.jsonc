@@ -1,0 +1,197 @@
+{
+  "$schema": "https://raw.githubusercontent.com/code-yeongyu/oh-my-opencode/master/assets/oh-my-opencode.schema.json",
+  "background_task": {
+    "defaultConcurrency": 3,
+    "staleTimeoutMs": 180000,
+    "providerConcurrency": {
+      "google": 4
+    }
+  },
+  "agents": {
+    "sisyphus": {
+      "model": "google/gemini-3-flash-preview",
+      "variant": "high",
+      "includeThoughts": true,
+      "options": {
+        "thinking": true
+      },
+      "temperature": 0.1,
+      "maxTokens": 8192,
+      "textVerbosity": "medium",
+      "prompt_append": "You are the Lead Engineering Orchestrator. Your goal is 100% task completion with maximum efficiency.\n\nPROTOCOL:\n1. **Reconnaissance First**: Verify file paths via 'explore' before coding.\n2. **Constitution**: Read ARCHITECTURE.md before planning.\n3. **Efficient Delegation**:\n   - Simple tasks (file discovery, doc lookup) → use explore/librarian\n   - Complex tasks (architecture review, heavy coding) → use oracle/hephaestus\n   - Planning → prometheus; Review → metis/momus\n4. **Avoid Redundancy**: Don't invoke multiple agents for the same information.\n5. **Safety**: Check devops-safety/SKILL for all destructive commands.\n6. **Specialized Skills**: Leverage backend-architect, database-expert, cicd-automation, and security-auditor skills when appropriate."
+    },
+    "hephaestus": {
+      "model": "google/gemini-3-flash-preview",
+      "variant": "high",
+      "includeThoughts": true,
+      "options": {
+        "thinking": true
+      },
+      "temperature": 0.1,
+      "maxTokens": 16384,
+      "textVerbosity": "low",
+      "prompt_append": "You are the Master Smith. You do not plan; you build. Your goal is to implement the exact specifications provided by Sisyphus or Prometheus.\n\nPROTOCOL:\n1. **Verify**: Check files before touching them.\n2. **Implement**: Write clean, typed, production-ready code.\n3. **Safety**: Adhere to devops-safety/SKILL at all times. Load the 'devops-safety/SKILL' skill.\n4. **Expertise**: Utilize backend-architect and database-expert skills for implementation details."
+    },
+    "oracle": {
+      "model": "google/gemini-3-flash-preview",
+      "variant": "max",
+      "includeThoughts": true,
+      "options": {
+        "thinking": true
+      },
+      "temperature": 0.2,
+      "maxTokens": 8192,
+      "textVerbosity": "high",
+      "prompt_append": "You are the Chief Architect. Focus on edge cases, security, and scalability. Provide the most robust, DRY solution possible.\n- Leverage backend-architect, database-expert, and security-auditor skills for deep analysis."
+    },
+    "librarian": {
+      "model": "google/gemini-2.5-flash-lite",
+      "variant": "low",
+      "includeThoughts": false,
+      "temperature": 0.1,
+      "maxTokens": 8192,
+      "textVerbosity": "medium",
+      "prompt_append": "You are a Research Assistant. Summarize large documentation sets concisely. Prioritize breadth of search over depth."
+    },
+    "explore": {
+      "model": "google/gemini-2.5-flash-lite",
+      "variant": "low",
+      "includeThoughts": false,
+      "temperature": 0.1,
+      "maxTokens": 4096,
+      "textVerbosity": "low",
+      "prompt_append": "You are a Code Scout. Locate relevant files and code paths. Do not refactor; only map the territory."
+    },
+    "frontend-ui-ux-engineer": {
+      "model": "google/gemini-3-flash-preview",
+      "variant": "medium",
+      "includeThoughts": true,
+      "options": {
+        "thinking": true
+      },
+      "temperature": 0.25,
+      "maxTokens": 8192,
+      "textVerbosity": "high",
+      "prompt_append": "You are a Senior Frontend Engineer. Prioritize accessibility (WCAG) and responsive design. Ensure UI changes match existing styling patterns."
+    },
+    "document-writer": {
+      "model": "google/gemini-2.5-flash-lite",
+      "variant": "medium",
+      "includeThoughts": false,
+      "temperature": 0.6,
+      "maxTokens": 8192,
+      "textVerbosity": "medium",
+      "prompt_append": "You are a Technical Writer. Produce clear, professional documentation. Avoid robotic phrasing."
+    },
+    "multimodal-looker": {
+      "model": "google/gemini-2.5-flash-lite",
+      "variant": "low",
+      "includeThoughts": false,
+      "temperature": 0.1,
+      "maxTokens": 4096,
+      "textVerbosity": "medium",
+      "prompt_append": "You are the Visual Analyst. Interpret images, diagrams, and UI screenshots to provide technical descriptions for the coding agents."
+    },
+    "prometheus": {
+      "model": "google/gemini-3-flash-preview",
+      "variant": "high",
+      "includeThoughts": true,
+      "options": {
+        "thinking": true
+      },
+      "temperature": 0.2,
+      "maxTokens": 4096,
+      "textVerbosity": "medium",
+      "prompt_append": "You are the Strategic Planner. Your job is to extract requirements from the user.\n- Ask clarifying questions if the request is vague.\n- Do NOT write code.\n- Output a clear, step-by-step implementation plan."
+    },
+    "metis": {
+      "model": "google/gemini-3-flash-preview",
+      "variant": "high",
+      "includeThoughts": true,
+      "options": {
+        "thinking": true
+      },
+      "temperature": 0.1,
+      "maxTokens": 4096,
+      "textVerbosity": "medium",
+      "prompt_append": "You are the Consultant. Review Prometheus's plan for logical gaps, missing edge cases, or security risks.\n- If the plan is solid, approve it.\n- If the plan is weak, reject it with specific feedback."
+    },
+    "momus": {
+      "model": "google/gemini-3-flash-preview",
+      "variant": "high",
+      "includeThoughts": true,
+      "options": {
+        "thinking": true
+      },
+      "temperature": 0.2,
+      "maxTokens": 4096,
+      "textVerbosity": "medium",
+      "prompt_append": "You are the Critic. You are the 'Bad Cop'. Actively try to break the proposed solution.\n- Point out potential performance bottlenecks.\n- Highlight 'happy path' assumptions.\n- Explicitly check for destructive commands, migrations, or data loss risks."
+    },
+    "atlas": {
+      "model": "google/gemini-2.5-flash-lite",
+      "variant": "medium",
+      "includeThoughts": false,
+      "temperature": 0.1,
+      "maxTokens": 8192,
+      "textVerbosity": "low",
+      "prompt_append": "You are the Task Runner. Your job is to execute the approved plan from Prometheus.\n- Do not reinterpret intent or redesign solutions.\n- Delegate complex coding tasks to Hephaestus or Oracle.\n- Mark steps as done only when verified.\n- Safety: Adhere to devops-safety/SKILL at all times."
+    }
+  },
+  "categories": {
+    "visual-engineering": {
+      "model": "google/gemini-3-flash-preview",
+      "variant": "medium",
+      "includeThoughts": true,
+      "options": {
+        "thinking": true
+      }
+    },
+    "ultrabrain": {
+      "model": "google/gemini-3-flash-preview",
+      "variant": "max",
+      "includeThoughts": true,
+      "options": {
+        "thinking": true
+      }
+    },
+    "deep": {
+      "model": "google/gemini-3-flash-preview",
+      "variant": "high",
+      "includeThoughts": true,
+      "options": {
+        "thinking": true
+      }
+    },
+    "artistry": {
+      "model": "google/gemini-3-flash-preview",
+      "variant": "high",
+      "includeThoughts": true,
+      "options": {
+        "thinking": true
+      },
+      "temperature": 0.35
+    },
+    "quick": {
+      "model": "google/gemini-2.5-flash-lite",
+      "includeThoughts": false
+    },
+    "unspecified-low": {
+      "model": "google/gemini-2.5-flash-lite",
+      "includeThoughts": false
+    },
+    "unspecified-high": {
+      "model": "google/gemini-3-flash-preview",
+      "variant": "high",
+      "includeThoughts": true,
+      "options": {
+        "thinking": true
+      }
+    },
+    "writing": {
+      "model": "google/gemini-2.5-flash-lite",
+      "includeThoughts": false,
+      "temperature": 0.6
+    }
+  }
+}

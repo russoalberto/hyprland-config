@@ -1,3 +1,7 @@
+---
+name: devops-safety
+description: Intercept all destructive or production-altering commands
+---
 # DevOps Safety Guardrails
 Intercept all destructive or production-altering commands to ensure infrastructure stability.
 

@@ -5,15 +5,7 @@
   "share": "disabled",
   "plugin": [
     "oh-my-opencode@latest",
-    "opencode-gemini-auth@latest",
     "@ramtinj95/opencode-tokenscope@latest",
     "opencode-devcontainers@latest"
-  ],
-  "provider": {
-    "google": {
-      "options": {
-        "projectId": "gen-lang-client-0200630088"
-      }
-    }
-  }
+  ]
 }
